@@ -33,7 +33,7 @@ while(<$fh>)
 sub hussain
 {
 	return if($sequence eq "0");
-	print "$header\n";
+	print $wh  "$header\n";
 	$mech->get('http://web.expasy.org/protparam/');
 	$mech->submit_form(
 		form_number => 1,
@@ -61,8 +61,9 @@ sub hussain
 	$atoms =~s/Estimated half-life:/Estimated half-life:\n--------------------/;
 	$atoms=~s/(<B>|<\/B>)//g;
 	$atoms=~s/\n/\r\n/g;
-	print "$aacd\n$wt\n$pi";
-	print "\n\nAmino acid composition: \n-----------------------\n";
-	print join"\n",@amino_composition,"\n";
-	print "$atoms\r\n\r\n\r\n$hypn\r\n\r\n\r\n";
+	print $wh "$aacd\n$wt\n$pi";
+	print $wh  "\r\n\r\nAmino acid composition: \r\n-----------------------\r\n";
+	print $wh  join"\n",@amino_composition,"\n";
+	print $wh  "$atoms\r\n\r\n\r\n$hypn\r\n\r\n\r\n";
+	print "$header-----Finished\r\n";
 }
