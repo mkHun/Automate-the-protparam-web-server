@@ -4,10 +4,11 @@ use WWW::Mechanize;
 my $mech = WWW::Mechanize->new;
 print "Enter your input filename: ";
 chomp(my $input = <STDIN>);
+print "OUtput file format is 'some_file_name.out.txt'";
 my $hypn = "*" x 100;
 open my $fh, "<:crlf", $input or die "File not found $!";
 
-open my $wh, ">","$input.out";
+open my $wh, ">","$input.out.txt";
 my ($header,$sequence);
 while(<$fh>)
 {
